@@ -19,6 +19,8 @@ class ArticleController extends AbstractController
             'Знаешь ли ты, вдоль ночных дорог'
         ];
 
+        dump($slug, $this);
+
         return $this->render('articles/show.html.twig', [
             'article' => ucwords(str_replace('-', ' ', $slug)),
             'comments' => $comments
