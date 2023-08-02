@@ -3,3 +3,12 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+index:
+    path: /
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\ArticleController::homepage
+
+articles:
+    path: /articles/{slug}
+    controller: App\Controller\ArticleController::show
