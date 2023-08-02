@@ -4,11 +4,10 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-index:
+app_homepage:
     path: /
-    # the controller value has the format 'controller_class::method_name'
     controller: App\Controller\ArticleController::homepage
 
-articles:
+app_article_show:
     path: /articles/{slug}
     controller: App\Controller\ArticleController::show
