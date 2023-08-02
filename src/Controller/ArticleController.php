@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class ArticleController
+class ArticleController extends AbstractController
 {
     public function homepage()
     {
@@ -12,7 +13,15 @@ class ArticleController
 
     public function show($slug)
     {
-        return new Response(sprintf(
-            'Будушая страница статьи: %s', ucwords(str_replace('-', ' ', $slug))));
+        $comments = [
+            'Хочу кушац',
+            'Опять дождь во Владивостоке',
+            'Знаешь ли ты, вдоль ночных дорог'
+        ];
+
+        return $this->render('articles/show.html.twig', [
+            'article' => ucwords(str_replace('-', ' ', $slug)),
+            'comments' => $comments
+        ]);
     }
 }
