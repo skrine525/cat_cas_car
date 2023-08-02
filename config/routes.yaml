@@ -11,3 +11,8 @@ app_homepage:
 app_article_show:
     path: /articles/{slug}
     controller: App\Controller\ArticleController::show
+
+app_article_like:
+    path: /articles/{id<\d+>}/like/{type<like|dislike>}
+    controller: App\Controller\ArticleLikeController::like
+    methods: POST
